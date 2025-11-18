@@ -19,7 +19,8 @@ export default function App() {
   const [search, setSearch] = useState("")
   const [filtered, setFiltered] = useState([])
   const [bestSellers, setBestSellers] = useState([]);
-  const [budgetMode, setBudgetMode] = useState(false)
+  // const [budgetMode, setBudgetMode] = useState(false)
+  const [maxPrice, setMaxPrice] = useState(null);
 
   const endpoint = "https://fakestoreapi.com/products"
 
@@ -70,7 +71,7 @@ export default function App() {
     <>
 
 
-      <BudgetContext.Provider value={{ budgetMode, setBudgetMode }}>
+      <BudgetContext.Provider value={{ maxPrice, setMaxPrice }}>
         <BrowserRouter>
           <Routes>
 

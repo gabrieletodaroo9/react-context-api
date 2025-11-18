@@ -5,8 +5,13 @@ import BudgetContext from '../contexts/BudgetContext'
 
 export default function Header() {
 
-    const { budgetMode, setBudgetMode } = useContext(BudgetContext)
+    // const { budgetMode, setBudgetMode } = useContext(BudgetContext)
 
+    const { maxPrice, setMaxPrice } = useContext(BudgetContext);
+
+    function handlePriceChange(e) {
+        setMaxPrice(Number(e.target.value))
+    }
 
 
     return (
@@ -18,7 +23,9 @@ export default function Header() {
                     <NavLink className="nav-link" to="/contacts">Chi Siamo</NavLink>
                     <NavLink className="nav-link" to="/products">Prodotti</NavLink>
                     <NavLink className="nav-link" to="/faqs">Faqs</NavLink>
-                    <button className={`btn py-2 ${budgetMode ? "btn-danger" : "btn-success"}`} onClick={() => setBudgetMode(!budgetMode)}>{budgetMode ? "Normal Mode" : "Budget Mode"}</button>
+                    <input type="number" placeholder="Inserisci il prezzo massimo..." value={maxPrice === 0 ? '' : maxPrice} onChange={handlePriceChange} className="form-control form-control-sm" style={{ width: '155px' }}
+                    />
+                    {/* <button className={`btn py-2 ${budgetMode ? "btn-danger" : "btn-success"}`} onClick={() => setBudgetMode(!budgetMode)}>{budgetMode ? "Normal Mode" : "Budget Mode"}</button> */}
                 </div>
             </div>
         </nav>

@@ -1,9 +1,17 @@
 import BannerUCL from "../components/BannerUCL";
 import Card from "../components/Card";
 import FormFind from "../components/FormFind";
+import { useContext } from "react";
+import BudgetContext from '../contexts/BudgetContext'
 
 export default function ProductsPage({ setActiveCategory, uniqueCategories, search, setSearch, filtered }) {
 
+    // const { budgetMode } = useContext(BudgetContext)
+    const { maxPrice } = useContext(BudgetContext)
+
+    // const filteredDouble = budgetMode ? filtered.filter(obj => obj.price <= 30) : filtered;
+
+    const filteredDouble = filtered.filter(obj => maxPrice === null || obj.price <= maxPrice)
 
     return (
         <>
@@ -14,7 +22,7 @@ export default function ProductsPage({ setActiveCategory, uniqueCategories, sear
                 <div className="container pt-4">
                     <div className="row g-5 pb-5">
                         {
-                            filtered.map(obj => (
+                            filteredDouble.map(obj => (
                                 <Card key={obj.id} obj={obj} />
                             ))
                         }
