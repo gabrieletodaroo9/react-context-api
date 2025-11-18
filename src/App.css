@@ -1,0 +1,367 @@
+/*#region RESET */
+
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*#endregion RESET */
+
+/*#region FONTS */
+
+.RobotoCondensed {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 900;
+}
+
+.edu-tas-beginner {
+    font-family: "Edu TAS Beginner", cursive;
+    font-weight: 500;
+}
+
+
+.comic-neue-bold {
+    font-family: "Comic Neue", cursive;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.comic-neue-regular {
+    font-family: "Comic Neue", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.momo-signature-regular {
+    font-family: "Momo Signature", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.league-gothic {
+    font-family: "League Gothic", sans-serif;
+    font-weight: 400;
+}
+
+/* #endregion FONTS */
+
+/*#region GENERICS */
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h4~li {
+    margin-top: 0.6rem;
+}
+
+/*#endregion GENERICS */
+
+/*#region UTILS */
+
+.logo {
+    height: 50px !important;
+    width: 190px !important;
+
+    &:hover {
+        scale: 1.03;
+    }
+}
+
+.logo-footer {
+    height: 70px !important;
+    width: 280px !important;
+
+}
+
+select {
+    cursor: pointer;
+}
+
+.form-control {
+    border: 2px solid black;
+}
+
+.bg-first {
+    background-color: rgb(30, 28, 28);
+}
+
+.text-first {
+    color: rgb(30, 28, 28);
+}
+
+.bg-second {
+    background-color: #f0f1f1;
+}
+
+.bg-third {
+    background-color: #c9cacb;
+}
+
+
+
+.text-logo {
+    color: #D98338;
+}
+
+.rotate {
+    margin-top: 2rem;
+    transition: transform 1s ease;
+}
+
+.bf-banner {
+    height: 200px;
+}
+
+.toRotate:hover .rotate {
+    transition: all 1.5s ease;
+    transform: rotateY(180deg);
+}
+
+.rounded-card {
+    border-radius: 20px !important;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15), 2px 2px 5px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.5s ease;
+    }
+}
+
+.nav-link:hover {
+    scale: 1.03;
+    color: #D98338;
+}
+
+.btn-danger:hover {
+    scale: 1.03;
+}
+
+.alert-danger {
+    height: 600px;
+}
+
+.img-single-product {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.col-1:hover {
+    scale: 1.25;
+}
+
+.bg-img {
+    background-image: url("https://png.pngtree.com/background/20250208/original/pngtree-flawlessly-smooth-white-rectangular-texture-picture-image_15307159.jpg");
+}
+
+.bg-white-transp {
+    transition: background-color 0.9s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.05);
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+/*#endregion UTILS */
+
+/*#region JUMBO */
+
+.jumbotron {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6)), url(https://wallpaper-house.com/data/out/9/wallpaper2you_346209.jpg);
+    background-position: top;
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.4rem;
+    transition: all 3s ease;
+
+
+    &:hover {
+        transition: all 4s ease;
+        scale: 1.02;
+    }
+
+    .btn:hover {
+        scale: 1.03;
+        color: #D98338 !important;
+        background-color: #2f2f2f;
+    }
+}
+
+/*#endregion JUMBO */
+
+/*#region BANNER */
+
+.banner {
+    color: white;
+    background-image: url("https://i.redd.it/b10brark3g031.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 400px;
+    transition: all 3s ease;
+
+    &:hover {
+        transition: all 3s ease;
+        scale: 1.02;
+    }
+
+    h1 {
+        padding-top: 70px;
+        font-size: 50px !important;
+    }
+}
+
+.ads-banner {
+    top: 480px;
+    left: 100px;
+    cursor: pointer;
+}
+
+.ads-banner2 {
+    top: 480px;
+    right: 100px;
+    cursor: pointer;
+}
+
+/*#endregion BANNER */
+
+/*#region CARD */
+.card {
+    background-color: #e7e3da;
+
+    &:hover {
+        transition: all 0.3s ease;
+        scale: 1.03;
+    }
+}
+
+.img-container {
+    height: 350px;
+    background-image: url("https://png.pngtree.com/background/20250208/original/pngtree-flawlessly-smooth-white-rectangular-texture-picture-image_15307159.jpg");
+
+    .card-img-top {
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+}
+
+.price {
+    bottom: 5px;
+    left: 5px;
+    border: 1px solid lightgray;
+}
+
+/*#endregion CARD */
+
+/*#region FOOTER */
+
+footer {
+    ul>*:hover {
+        scale: 1.03;
+    }
+
+
+    .footer-link:hover {
+        color: #D98338;
+    }
+
+    img {
+        border-radius: 20%;
+        height: 200px;
+        /* width: auto; */
+    }
+}
+
+/*#endregion FOOTER */
+
+/* #region MEDIAQUERY */
+
+@media screen and (max-width:992px) {
+    .stop {
+        display: none !important;
+    }
+
+    .col-8 {
+        width: 100% !important;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .banner {
+        h1 {
+            font-size: 3rem !important;
+
+        }
+    }
+
+    .ads-banner4 {
+        margin-top: 4rem;
+        display: flex !important;
+        justify-content: center;
+        height: 60px;
+    }
+
+    .container-footer-resp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer {
+        .row {
+            flex-direction: column-reverse;
+        }
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .banner {
+
+        h1 {
+            padding-top: 3rem !important;
+            font-size: 2.7rem !important;
+        }
+    }
+
+    .ads-banner4 {
+        height: 40px;
+    }
+
+    .navbar>.container-fluid {
+        flex-direction: column !important;
+
+        .logo {
+            padding-left: 1rem;
+            align-self: center;
+        }
+
+        .navbar-links {
+            flex-direction: row;
+            padding-top: 1rem;
+            width: 100%;
+            justify-content: space-around !important;
+        }
+    }
+
+    .bf-banner {
+        font-size: 1rem !important;
+    }
+
+    .toRotate:nth-child(2) {
+        display: none;
+    }
+
+
+}
+
+/* #endregion MEDIAQUERY */
