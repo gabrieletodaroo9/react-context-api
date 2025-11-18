@@ -5,8 +5,8 @@ import BlackFridayBanner from "../components/BlackFridayBanner";
 import adsBanner1 from "../assets/ads-banner1.png"
 import adsBanner2 from "../assets/ads-banner2.png"
 import adsBanner4 from "../assets/ads-banner4.jpg"
-import { Quantum } from 'ldrs/react'
 import 'ldrs/react/Quantum.css'
+import Loader from "../components/Loader";
 
 export default function HomePage({ bestSellers }) {
 
@@ -15,12 +15,7 @@ export default function HomePage({ bestSellers }) {
     return (
         <>
             {isLoading ? (
-                <div className="d-flex justify-content-center align-items-center vh-100">
-                    <div className="text-dark d-flex flex-column justify-content-center align-items-center">
-                        <Quantum size="45" speed="1.75" color="black" />
-                        <h1 className="RobotoCondensed fw-1">Loading...</h1>
-                    </div>
-                </div>
+                <Loader />
             ) : (
                 <main className="bg-second">
                     <Jumbotron topShadow={false} />

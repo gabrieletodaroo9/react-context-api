@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
-import { Quantum } from 'ldrs/react'
+import Loader from "../components/Loader"
 
 
 
@@ -13,6 +13,8 @@ export default function SingleProductPage() {
     const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true)
     const currentId = Number(id)
+
+
 
     useEffect(() => {
 
@@ -36,12 +38,7 @@ export default function SingleProductPage() {
     return (
         <>
             {isLoading ? (
-                <div className="d-flex justify-content-center align-items-center vh-100">
-                    <div className="text-dark d-flex flex-column justify-content-center align-items-center">
-                        <Quantum size="45" speed="1.75" color="black" />
-                        <h1 className="RobotoCondensed fw-1">Loading...</h1>
-                    </div>
-                </div>
+                <Loader />
             ) : (
                 <main className="bg-img">
                     <div className="container bg-white-transp py-5">

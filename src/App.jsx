@@ -10,6 +10,7 @@ import axios from 'axios'
 import SingleProductPage from './pages/SingleProductPage'
 import ErrLayout from './layouts/ErrLayout'
 import ErrorPage from './pages/ErrPage'
+import BudgetContext from './contexts/BudgetContext'
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
   const [search, setSearch] = useState("")
   const [filtered, setFiltered] = useState([])
   const [bestSellers, setBestSellers] = useState([]);
+  const [budgetMode, setBudgetMode] = useState(false)
 
   const endpoint = "https://fakestoreapi.com/products"
 
@@ -62,25 +64,31 @@ export default function App() {
   }, [data])
 
 
+
+
   return (
     <>
-      <BrowserRouter>
-        <Routes>
 
-          <Route element={<DefaultLayout />}>
-            <Route index element={<HomePage bestSellers={bestSellers} />} />
-            <Route path='/contacts' element={<ContactsPage />} />
-            <Route path='/products' element={<ProductsPage filtered={filtered} setActiveCategory={setActiveCategory} uniqueCategories={uniqueCategories} search={search} setSearch={setSearch} />} />
-            <Route path='/faqs' element={<FaqsPage />} />
-            <Route path='/products/:id' element={<SingleProductPage />} />
-          </Route>
 
-          <Route element={<ErrLayout />}>
-            <Route path='/error' element={<ErrorPage />} />
-          </Route>
+      <BudgetContext.Provider value={{ budgetMode, setBudgetMode }}>
+        <BrowserRouter>
+          <Routes>
 
-        </Routes>
-      </BrowserRouter>
+            <Route element={<DefaultLayout />}>
+              <Route index element={<HomePage bestSellers={bestSellers} />} />
+              <Route path='/contacts' element={<ContactsPage />} />
+              <Route path='/products' element={<ProductsPage filtered={filtered} setActiveCategory={setActiveCategory} uniqueCategories={uniqueCategories} search={search} setSearch={setSearch} />} />
+              <Route path='/faqs' element={<FaqsPage />} />
+              <Route path='/products/:id' element={<SingleProductPage />} />
+            </Route>
+
+            <Route element={<ErrLayout />}>
+              <Route path='/error' element={<ErrorPage />} />
+            </Route>
+
+          </Routes>
+        </BrowserRouter>
+      </BudgetContext.Provider>
     </>
   )
 }
